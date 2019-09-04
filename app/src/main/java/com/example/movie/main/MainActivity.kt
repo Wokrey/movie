@@ -5,6 +5,7 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import com.example.movie.R
 import com.example.movie.base.BaseActivity
+import com.example.movie.main.films.presentation.FilmsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
