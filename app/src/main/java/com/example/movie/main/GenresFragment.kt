@@ -10,6 +10,10 @@ import com.example.movie.base.BaseFragment
 
 class GenresFragment : BaseFragment() {
 
+    companion object{
+        const val TAG = "GenresFragment"
+        fun newInstance() = GenresFragment()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
