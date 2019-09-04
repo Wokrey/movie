@@ -15,13 +15,22 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 
 
-const val BASE_URL = "https://api.themoviedb.org/3"
+const val BASE_URL = "https://api.themoviedb.org/3/"
+const val API_KEY = "api_key"
+const val API_KEY_VALUE = "02da584cad2ae31b564d940582770598"
 
 val appModule = module {
     single {
         OkHttpClient.Builder().addInterceptor {
+            val urlPostfix = it.request()
+                .url()
+                .newBuilder()
+                .addQueryParameter(API_KEY, API_KEY_VALUE)
+                .build()
+
             val request = it.request()
                 .newBuilder()
+                .url(urlPostfix)
                 .addHeader("Accept", "Application/JSON")
                 .build()
 
