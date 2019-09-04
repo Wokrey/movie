@@ -1,4 +1,4 @@
-package com.example.movie.base
+package com.example.movie.base.api
 
 /**
  * Created by wokrey@gmail.com on 9/4/19.

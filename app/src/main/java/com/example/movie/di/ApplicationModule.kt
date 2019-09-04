@@ -1,7 +1,7 @@
 package com.example.movie.di
 
 import android.preference.PreferenceManager
-import com.example.movie.base.ApiService
+import com.example.movie.base.api.ApiService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
