@@ -17,7 +17,7 @@ class PopularViewModel(
     private val repository: PopularRepository
 ): BaseViewModel() {
 
-    private val popularsLD = MutableLiveData<List<PopularMovie>>()
+    val popularsLD = MutableLiveData<List<PopularMovie>>()
 
     fun loadPopulars() = launch(uiContext) {
         val response = withContext(bg){
@@ -31,6 +31,4 @@ class PopularViewModel(
         }
     }
 
-    //getters
-    fun getPopularsLD() = popularsLD
 }
