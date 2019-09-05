@@ -1,4 +1,4 @@
-package com.example.movie.main
+package com.example.movie.main.genres
 
 
 import android.os.Bundle
