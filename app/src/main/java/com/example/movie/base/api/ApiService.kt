@@ -2,6 +2,7 @@ package com.example.movie.base.api
 
 import com.example.movie.main.films.data.model.PopularResponse
 import com.example.movie.main.films.data.model.UpcomingResponse
+import com.example.movie.main.genres.data.model.GenresResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -23,4 +24,9 @@ interface ApiService {
         @Query("language") language: String,
         @Query("page") page: Int
     ): Deferred<UpcomingResponse>
+
+    @GET("genre/movie/list")
+    fun getGenresList(
+        @Query("language") language: String
+    ): Deferred<GenresResponse>
 }
