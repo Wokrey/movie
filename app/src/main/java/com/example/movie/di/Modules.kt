@@ -7,5 +7,6 @@ package com.example.movie.di
 
 val modules = listOf(
     appModule,
-    popularModule
+    popularModule,
+    upcomingModule
 )
