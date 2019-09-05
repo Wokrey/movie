@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="popular"
-            type="com.example.movie.main.films.data.model.PopularMovie" />
+            name="upcoming"
+            type="com.example.movie.main.films.data.model.UpcomingMovie" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -18,7 +19,7 @@
         android:padding="2dp">
 
         <ImageView
-            android:id="@+id/img_popular"
+            android:id="@+id/img_upcoming"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
@@ -26,17 +27,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            app:loadImg="@{popular.poster_path}"
+            app:loadImg="@{upcoming.poster_path}"
             tools:srcCompat="@tools:sample/avatars[9]" />
 
         <TextView
             android:id="@+id/tv_title"
+            style="@style/TitleStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            style="@style/TitleStyle"
-            android:text="@{popular.title}"
+            android:text="@{upcoming.original_title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/release_date_bg"
+            android:text="@{upcoming.release_date}"
+            android:padding="2dp"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_upcoming"
+            app:layout_constraintEnd_toEndOf="@+id/img_upcoming"
+            app:layout_constraintStart_toStartOf="@+id/img_upcoming" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
