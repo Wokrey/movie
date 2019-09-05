@@ -20,10 +20,10 @@ const val IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500"
 object BindingUtils {
 
     @JvmStatic
-    @BindingAdapter("populars")
-    fun RecyclerView.bindItems(items: LiveData<List<PopularMovie>>) {
+    @BindingAdapter("items")
+    fun <T> RecyclerView.bindItems(items: LiveData<List<T>>) {
         items.value ?: return
-        val adapter = adapter as RecyclerBindingAdapter<PopularMovie>
+        val adapter = adapter as RecyclerBindingAdapter<T>
         adapter.setItems(items.value)
     }
 

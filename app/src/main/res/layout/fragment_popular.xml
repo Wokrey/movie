@@ -12,6 +12,6 @@
        android:id="@+id/rv_populars"
        android:layout_width="match_parent"
        android:padding="4dp"
-       app:populars="@{viewModel.popularsLD}"
+       app:items="@{viewModel.popularsLD}"
        android:layout_height="match_parent"/>
 </layout>
