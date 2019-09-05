@@ -15,7 +15,7 @@ class FilmsPagerAdapter(
 
     override fun getItem(position: Int): Fragment = when (position) {
         0 -> PopularFragment.newInstance()
-        else -> SoonOnFragment.newInstance()
+        else -> UpcomingFragment.newInstance()
     }
 
     override fun getCount() = pagesCount
