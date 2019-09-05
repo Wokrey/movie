@@ -11,12 +11,12 @@ import com.example.movie.base.BaseFragment
 import com.example.movie.databinding.FragmentSoonOnBinding
 
 
-class SoonOnFragment : BaseFragment() {
+class UpcomingFragment : BaseFragment() {
 
     companion object{
-        const val TAG = "SoonOnFragment"
+        const val TAG = "UpcomingFragment"
 
-        fun newInstance() = SoonOnFragment()
+        fun newInstance() = UpcomingFragment()
     }
 
     lateinit var binding: FragmentSoonOnBinding
@@ -25,7 +25,7 @@ class SoonOnFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_soon_on, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_upcoming, container, false)
 
         return binding.root
     }
