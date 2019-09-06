@@ -2,8 +2,6 @@ package com.example.movie.main.genres.data
 
 import com.example.movie.base.api.ApiService
 import com.example.movie.base.api.Response
-import com.example.movie.main.genres.data.model.GenreMoviesRequestModel
-import com.example.movie.main.genres.data.model.GenreMoviesResponse
 import com.example.movie.main.genres.data.model.GenresRequestModel
 import com.example.movie.main.genres.data.model.GenresResponse
 
@@ -23,16 +21,5 @@ class DefaultGenresRepository(
         Response.Error(ex)
     }
 
-    override suspend fun getMoviesByGenre(model: GenreMoviesRequestModel): Response<GenreMoviesResponse> = try {
-        val result = api.getMoviesByGenre(
-            language = model.language,
-            page = model.page,
-            withGenres = model.with_genres
-        ).await()
 
-        Response.Success(result)
-    } catch (ex: Exception) {
-
-        Response.Error(error = ex)
-    }
 }
