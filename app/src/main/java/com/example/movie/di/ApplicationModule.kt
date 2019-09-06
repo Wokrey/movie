@@ -1,10 +1,8 @@
 package com.example.movie.di
 
-import android.preference.PreferenceManager
 import com.example.movie.base.api.ApiService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
-import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -37,10 +35,6 @@ val appModule = module {
             return@addInterceptor it.proceed(request)
         }
             .build()
-    }
-
-    single {
-        PreferenceManager.getDefaultSharedPreferences(androidApplication().applicationContext)
     }
 
     single {
