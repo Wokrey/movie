@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -24,6 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="H,1:2"
             app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:loadImg="@{movie.poster_path}" />
 
@@ -41,6 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="4dp"
+            android:layout_marginStart="2dp"
             android:background="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/img_movie"
@@ -64,6 +66,7 @@
             android:id="@+id/tv_rating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:background="@drawable/release_date_bg"
             android:text="@{`Ретинг:` + movie.vote_average}"
             app:layout_constraintBottom_toBottomOf="@+id/img_movie"
