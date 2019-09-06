@@ -8,7 +8,7 @@
         android:background="@color/base_bg_color"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
+        <com.example.movie.base.custom.CentringTabLayout
             android:id="@+id/tab_genres"
             android:layout_width="0dp"
             android:layout_height="25dp"
@@ -16,6 +16,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tabMode="scrollable"
+            app:tabContentStart="100dp"
             app:tabSelectedTextColor="@color/colorPrimary" />
 
         <androidx.viewpager.widget.ViewPager
