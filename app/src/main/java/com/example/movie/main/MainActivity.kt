@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.movie.R
 import com.example.movie.base.BaseActivity
 import com.example.movie.main.films.presentation.FilmsFragment
-import com.example.movie.main.genres.GenresFragment
+import com.example.movie.main.genres.presentation.GenresFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
