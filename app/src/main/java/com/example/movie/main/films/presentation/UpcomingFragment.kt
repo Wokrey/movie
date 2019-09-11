@@ -20,7 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UpcomingFragment : BaseFragment() {
 
-    companion object{
+    companion object {
         const val TAG = "UpcomingFragment"
 
         fun newInstance() = UpcomingFragment()
@@ -38,7 +38,6 @@ class UpcomingFragment : BaseFragment() {
             variableId = BR.upcoming,
             context = context!!
         )
-        viewModel.loadUpcomingMovies()
     }
 
     override fun onCreateView(
@@ -47,10 +46,15 @@ class UpcomingFragment : BaseFragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_upcoming, container, false)
         binding.rvUpcoming.adapter = adapter
-        binding.rvUpcoming.layoutManager = StaggeredGridLayoutManager( 2, RecyclerView.VERTICAL)
+        binding.rvUpcoming.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+        getData(savedInstanceState)
         return binding.root
+    }
+
+    private fun getData(savedInstanceState: Bundle?) {
+        savedInstanceState ?: viewModel.loadUpcomingMovies()
     }
 
 

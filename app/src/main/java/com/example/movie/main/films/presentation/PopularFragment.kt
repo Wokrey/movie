@@ -43,12 +43,16 @@ class PopularFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_popular, container, false)
-        viewModel.loadPopulars()
         binding.rvPopulars.adapter = adapter
         binding.rvPopulars.layoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+        getData(savedInstanceState = savedInstanceState)
         return binding.root
+    }
+
+    private fun getData(savedInstanceState: Bundle?){
+        savedInstanceState ?: viewModel.loadPopulars()
     }
 
 

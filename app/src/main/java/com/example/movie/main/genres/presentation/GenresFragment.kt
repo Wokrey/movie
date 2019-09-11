@@ -34,8 +34,7 @@ class GenresFragment : BaseFragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_genres, container, false)
         initObservers()
-        viewModel.getGenres()
-
+        getData(savedInstanceState)
         return binding.root
     }
 
@@ -58,6 +57,10 @@ class GenresFragment : BaseFragment() {
         titles.forEach {
             binding.tabGenres.addTab(binding.tabGenres.newTab().setText(it))
         }
+    }
+
+    private fun getData(savedInstanceState: Bundle?){
+        savedInstanceState ?: viewModel.loadGenres()
     }
 
 

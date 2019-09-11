@@ -18,7 +18,7 @@ class GenresViewModel(
 ) : BaseViewModel() {
     private val genresLD = MediatorLiveData<List<Genre>>()
 
-    fun getGenres() = launch(uiContext) {
+    fun loadGenres() = launch(uiContext) {
         val response = withContext(bg) {
 
             return@withContext repository.getGenres(GenresRequestModel())
