@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelChildren
 import kotlin.coroutines.CoroutineContext
 
 /**
@@ -27,7 +28,7 @@ open class BaseViewModel(
 
     override fun onCleared() {
         super.onCleared()
-        job.cancel()
+        coroutineContext.cancelChildren()
     }
 
     //getters
